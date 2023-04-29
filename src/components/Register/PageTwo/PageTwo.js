@@ -70,6 +70,7 @@ const PageTwo = ({
             PREVIOUS
           </button>
           <button
+           disabled={(!values.department + !values.graduationYear + !values.rollNumber)}
             className="btn text-white rounded-pill d-flex mx-auto align-items-center justify-content-center"
             type="submit"
             style={{
@@ -136,6 +137,7 @@ const PageTwo = ({
               PREVIOUS
             </button>
             <button
+            disabled={(!values.batch + !values.companyName + !values.department)}
               className="btn text-white rounded-pill d-flex mx-auto align-items-center justify-content-center"
               type="submit"
               style={{
