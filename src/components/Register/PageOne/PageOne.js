@@ -26,6 +26,7 @@ const PageOne = ({
           classname={"fa-solid fa-user"}
           errors={errors.firstName}
           touched={touched.firstName}
+           
         ></Input>
 
         <Input
@@ -38,6 +39,7 @@ const PageOne = ({
           classname={"fa-solid fa-phone-volume"}
           errors={errors.contactNumber}
           touched={touched.contactNumber}
+           
         ></Input>
 
         <Input
@@ -51,6 +53,7 @@ const PageOne = ({
           classname={"fa-solid fa-envelope"}
           errors={errors.email}
           touched={touched.email}
+           
         ></Input>
 
         <MySelect
@@ -62,6 +65,7 @@ const PageOne = ({
           classname={"fa-solid fa-venus-mars"}
           errors={errors.gender}
           touched={touched.gender}
+           
         />
 
         <MySelect
@@ -73,10 +77,12 @@ const PageOne = ({
           placeholder="What best describes you"
           errors={errors.userRole}
           touched={touched.userRole}
+           
         />
 
         <div className="d-flex">
           <button
+          disabled={(!values.firstName + !values.contactNumber + !values.email + !values.gender + !values.userRole)}
             className="btn text-white rounded-pill d-flex mx-auto align-items-center justify-content-center"
             type="submit"
             style={{

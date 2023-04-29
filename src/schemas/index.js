@@ -11,18 +11,18 @@ export const signInSchema = Yup.object({
 
 export const registerSchema = Yup.object().shape({
   firstName: Yup.string().min(3).max(20).required("Please enter your name"),
-  contactNumber: Yup.string().min(9).max(12).required("Please enter Number"),
+  contactNumber: Yup.string().min(9).max(12).required("Please enter phone number"),
   email: Yup.string()
     .email()
     .min(10)
     .max(50)
-    .required("Please enter your email"),
+    .required("Please enter your email id"),
   gender: Yup.mixed()
-    .required("Please Select Gender")
+    .required("Please select your gender")
     .oneOf(["male", "female", "unspecified"])
     .label("Gender"),
   userRole: Yup.mixed()
-    .required("Please Select User Role")
+    .required("Please select user role")
     .oneOf(["student", "faculty", "alumni", "other"])
     .label("User Role"),
   // department: Yup.mixed()
@@ -41,7 +41,7 @@ export const registerSchema = Yup.object().shape({
     .matches(/[a-z]/, "Password requires a lowercase letter")
     .matches(/[A-Z]/, "Password requires an uppercase letter")
     .matches(/[^\w]/, "Password requires a symbol")
-    .required("Enter a Password"),
+    .required("Create a Password"),
   confirmPassword: Yup.string()
     .oneOf([Yup.ref("password"), null], 'Must match "password" field value')
     .required("Re-enter the password"),
